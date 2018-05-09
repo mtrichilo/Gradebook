@@ -1,0 +1,18 @@
+﻿<Window x:Class="GradebookView.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GradebookView"
+        xmlns:vm="clr-namespace:GradebookViewModel;assembly=GradebookViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:UserViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <ListView ItemsSource="{Binding Terms}" SelectedItem="{Binding Selected}" HorizontalAlignment="Left" Width="150"/>
+        <ListView ItemsSource="{Binding Selected.Courses}" HorizontalAlignment="Right" Width="150"/>
+
+    </Grid>
+</Window>
